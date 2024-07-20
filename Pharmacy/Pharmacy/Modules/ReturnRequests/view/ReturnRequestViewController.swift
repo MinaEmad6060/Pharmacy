@@ -69,6 +69,7 @@ class ReturnRequestViewController: UIViewController, UITableViewDelegate, UITabl
         cell.btnShowItemsTapped = { [weak self] in
             guard let self = self else { return }
             
+            UserDefaults.standard.setValue(String(returnRequestList?[indexPath.row].id ?? -1), forKey: "returnRequestId")
             Utils.navigateToNextScreen(view: self, storyboard: "Main", nextScreen: "allItemsVC")
         }
         

@@ -16,7 +16,8 @@ class ItemsViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        
         itemsTableView.delegate = self
         itemsTableView.dataSource = self
         
@@ -40,3 +41,15 @@ class ItemsViewController: UIViewController, UITableViewDelegate, UITableViewDat
 
 
 }
+
+struct ItemViewData{
+    var ndc: String?
+    var description: String?
+    var manufacturer: String?
+    var fullQuantity: Double?
+    var partialQuantity: Double?
+    var expirationDate: String?
+    var lotNumber: String?
+}
+
+

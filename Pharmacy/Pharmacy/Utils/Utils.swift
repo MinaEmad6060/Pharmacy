@@ -16,6 +16,9 @@ class Utils{
     static var disabledBtnColor = UIColor(red: 0xEF/255.0, green: 0xEF/255.0, blue: 0xEF/255.0, alpha: 1.0)
     
     
+    static var currentReturnRequest: Int?
+    
+    
     static var postHeaders: HTTPHeaders = [
         "Accept": "application/json"
     ]

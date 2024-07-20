@@ -11,7 +11,14 @@ class ItemTableViewCell: UITableViewCell {
     var btnUpdateItem: (() -> Void)?
     
     @IBOutlet weak var bgView: UIView!
-    
+    @IBOutlet weak var ndeText: UILabel!
+    @IBOutlet weak var descriptionText: UILabel!
+    @IBOutlet weak var manufacturerText: UILabel!
+    @IBOutlet weak var fullQuantityText: UILabel!
+    @IBOutlet weak var partialQuantityText: UILabel!
+    @IBOutlet weak var expirationDateText: UILabel!
+    @IBOutlet weak var lotNumberText: UILabel!
+ 
     @IBOutlet weak var btnUpdateItemOutlet: UIButton!
     
     @IBAction func btnShowItems(_ sender: Any) {
