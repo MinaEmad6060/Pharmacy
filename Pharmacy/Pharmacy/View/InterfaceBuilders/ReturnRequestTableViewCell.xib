@@ -161,6 +161,12 @@
             <connections>
                 <outlet property="bgView" destination="h6u-QP-jcB" id="ipC-Gi-t5N"/>
                 <outlet property="btnShowItemsOutlet" destination="KUr-hG-eYi" id="SYj-e2-RGA"/>
+                <outlet property="createdAtText" destination="ZJn-0t-ub6" id="uDh-ji-KHO"/>
+                <outlet property="idText" destination="dEk-32-U9E" id="irA-Jh-dcZ"/>
+                <outlet property="itemsText" destination="3t5-xd-1g0" id="IR1-8l-Waw"/>
+                <outlet property="serviceText" destination="nrQ-QT-sVq" id="NP0-8f-941"/>
+                <outlet property="statusText" destination="S19-Xf-jMq" id="AEw-Tt-Faq"/>
+                <outlet property="wholesalerText" destination="Gub-x1-mcp" id="aEv-4b-EiZ"/>
             </connections>
             <point key="canvasLocation" x="231.29770992366412" y="90.492957746478879"/>
         </tableViewCell>

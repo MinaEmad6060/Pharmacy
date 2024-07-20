@@ -12,7 +12,12 @@ class ReturnRequestTableViewCell: UITableViewCell {
     var btnShowItemsTapped: (() -> Void)?
     
     @IBOutlet weak var bgView: UIView!
-    
+    @IBOutlet weak var idText: UILabel!
+    @IBOutlet weak var createdAtText: UILabel!
+    @IBOutlet weak var statusText: UILabel!
+    @IBOutlet weak var itemsText: UILabel!
+    @IBOutlet weak var serviceText: UILabel!
+    @IBOutlet weak var wholesalerText: UILabel!
     @IBOutlet weak var btnShowItemsOutlet: UIButton!
     
     @IBAction func btnShowItems(_ sender: Any) {

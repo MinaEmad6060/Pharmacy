@@ -19,6 +19,15 @@ class Utils{
     static var postHeaders: HTTPHeaders = [
         "Accept": "application/json"
     ]
+    
+    static var getHeaders: HTTPHeaders = [
+        "Authorization": "Bearer \(UserDefaults.standard.string(forKey: "userToken") ?? "")"
+    ]
+    
+    static func registerNewTableViewCell(tableView: UITableView, cellClass: String, cellName: String){
+        let customCell = UINib(nibName: cellClass, bundle: nil)
+        tableView.register(customCell.self, forCellReuseIdentifier: cellName)
+    }
 
     
     static func navigateToNextScreen(view: UIViewController, storyboard: String, nextScreen: String){
