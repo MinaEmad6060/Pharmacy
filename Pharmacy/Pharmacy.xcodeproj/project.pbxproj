@@ -18,6 +18,9 @@
 		407BEF2D2C4C119400F99D50 /* ReturnRequestTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407BEF2B2C4C119400F99D50 /* ReturnRequestTableViewCell.swift */; };
 		407BEF2E2C4C119400F99D50 /* ReturnRequestTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 407BEF2C2C4C119400F99D50 /* ReturnRequestTableViewCell.xib */; };
 		407BEF312C4C178F00F99D50 /* ReturnRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407BEF302C4C178F00F99D50 /* ReturnRequestViewController.swift */; };
+		407BEF342C4C2AF600F99D50 /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407BEF322C4C2AF600F99D50 /* ItemTableViewCell.swift */; };
+		407BEF352C4C2AF600F99D50 /* ItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 407BEF332C4C2AF600F99D50 /* ItemTableViewCell.xib */; };
+		407BEF382C4C2D6F00F99D50 /* ItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407BEF372C4C2D6F00F99D50 /* ItemsViewController.swift */; };
 		98BF367F43C60CC2A5CBE2E3 /* Pods_Pharmacy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6CE342F6357D2EC29BB93F7 /* Pods_Pharmacy.framework */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +38,9 @@
 		407BEF2B2C4C119400F99D50 /* ReturnRequestTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReturnRequestTableViewCell.swift; sourceTree = "<group>"; };
 		407BEF2C2C4C119400F99D50 /* ReturnRequestTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReturnRequestTableViewCell.xib; sourceTree = "<group>"; };
 		407BEF302C4C178F00F99D50 /* ReturnRequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReturnRequestViewController.swift; sourceTree = "<group>"; };
+		407BEF322C4C2AF600F99D50 /* ItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
+		407BEF332C4C2AF600F99D50 /* ItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemTableViewCell.xib; sourceTree = "<group>"; };
+		407BEF372C4C2D6F00F99D50 /* ItemsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsViewController.swift; sourceTree = "<group>"; };
 		45DD511739DB0767A8F599C3 /* Pods-Pharmacy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pharmacy.debug.xcconfig"; path = "Target Support Files/Pods-Pharmacy/Pods-Pharmacy.debug.xcconfig"; sourceTree = "<group>"; };
 		A6CE342F6357D2EC29BB93F7 /* Pods_Pharmacy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pharmacy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C08910FC3A475E5AB2A10937 /* Pods-Pharmacy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pharmacy.release.xcconfig"; path = "Target Support Files/Pods-Pharmacy/Pods-Pharmacy.release.xcconfig"; sourceTree = "<group>"; };
@@ -90,6 +96,7 @@
 			children = (
 				407BEF262C4C0B4200F99D50 /* Login */,
 				407BEF2F2C4C176B00F99D50 /* ReturnRequests */,
+				407BEF362C4C2D5500F99D50 /* Items */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -123,6 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				407BEF2B2C4C119400F99D50 /* ReturnRequestTableViewCell.swift */,
+				407BEF322C4C2AF600F99D50 /* ItemTableViewCell.swift */,
 			);
 			path = classes;
 			sourceTree = "<group>";
@@ -133,6 +141,7 @@
 				407BEF0E2C4C01E500F99D50 /* Main.storyboard */,
 				407BEF132C4C01E600F99D50 /* LaunchScreen.storyboard */,
 				407BEF2C2C4C119400F99D50 /* ReturnRequestTableViewCell.xib */,
+				407BEF332C4C2AF600F99D50 /* ItemTableViewCell.xib */,
 			);
 			path = InterfaceBuilders;
 			sourceTree = "<group>";
@@ -167,6 +176,14 @@
 				407BEF302C4C178F00F99D50 /* ReturnRequestViewController.swift */,
 			);
 			path = ReturnRequests;
+			sourceTree = "<group>";
+		};
+		407BEF362C4C2D5500F99D50 /* Items */ = {
+			isa = PBXGroup;
+			children = (
+				407BEF372C4C2D6F00F99D50 /* ItemsViewController.swift */,
+			);
+			path = Items;
 			sourceTree = "<group>";
 		};
 		47A9DDA511C120A8262772E8 /* Pods */ = {
@@ -249,6 +266,7 @@
 				407BEF122C4C01E600F99D50 /* Assets.xcassets in Resources */,
 				407BEF152C4C01E600F99D50 /* Base in Resources */,
 				407BEF102C4C01E500F99D50 /* Base in Resources */,
+				407BEF352C4C2AF600F99D50 /* ItemTableViewCell.xib in Resources */,
 				407BEF2E2C4C119400F99D50 /* ReturnRequestTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -306,6 +324,8 @@
 				407BEF232C4C040300F99D50 /* NetworkManager.swift in Sources */,
 				407BEF212C4C03F800F99D50 /* NetworkManagerProtocol.swift in Sources */,
 				407BEF2A2C4C0B7100F99D50 /* LoginViewController.swift in Sources */,
+				407BEF382C4C2D6F00F99D50 /* ItemsViewController.swift in Sources */,
+				407BEF342C4C2AF600F99D50 /* ItemTableViewCell.swift in Sources */,
 				407BEF2D2C4C119400F99D50 /* ReturnRequestTableViewCell.swift in Sources */,
 				407BEF312C4C178F00F99D50 /* ReturnRequestViewController.swift in Sources */,
 				407BEF0B2C4C01E500F99D50 /* SceneDelegate.swift in Sources */,

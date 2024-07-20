@@ -105,6 +105,9 @@
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <state key="normal" title="Button"/>
                         <buttonConfiguration key="configuration" style="plain" title="Show Items"/>
+                        <connections>
+                            <action selector="btnShowItems:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="b8s-5M-LIG"/>
+                        </connections>
                     </button>
                 </subviews>
                 <constraints>
