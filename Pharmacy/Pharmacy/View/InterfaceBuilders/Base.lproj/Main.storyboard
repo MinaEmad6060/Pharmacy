@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="SMC-VE-oD9">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="C1Y-Ih-Isq">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
@@ -129,10 +129,10 @@
             </objects>
             <point key="canvasLocation" x="5026.7175572519081" y="107.74647887323944"/>
         </scene>
-        <!--View Controller-->
+        <!--Return Request View Controller-->
         <scene sceneID="tPW-Mq-ynR">
             <objects>
-                <viewController id="C1Y-Ih-Isq" sceneMemberID="viewController">
+                <viewController id="C1Y-Ih-Isq" customClass="ReturnRequestViewController" customModule="Pharmacy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="y4h-wd-D7q">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -152,10 +152,10 @@
                                 </items>
                             </navigationBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="MB4-WA-wvB">
-                                <rect key="frame" x="16" y="114" width="361" height="704"/>
+                                <rect key="frame" x="16" y="120.66666666666669" width="361" height="697.33333333333326"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="FUu-Oq-2RV">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="returnRequestCell" id="FUu-Oq-2RV">
                                         <rect key="frame" x="0.0" y="50" width="361" height="47.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="FUu-Oq-2RV" id="l57-tH-zQ4">
@@ -173,11 +173,14 @@
                             <constraint firstItem="Mqf-m6-DGd" firstAttribute="trailing" secondItem="MB4-WA-wvB" secondAttribute="trailing" constant="16" id="3VR-O8-JId"/>
                             <constraint firstItem="En5-hu-xFn" firstAttribute="leading" secondItem="Mqf-m6-DGd" secondAttribute="leading" id="5mV-yy-99V"/>
                             <constraint firstItem="MB4-WA-wvB" firstAttribute="leading" secondItem="Mqf-m6-DGd" secondAttribute="leading" constant="16" id="Hbw-6b-A3Z"/>
-                            <constraint firstItem="MB4-WA-wvB" firstAttribute="top" secondItem="En5-hu-xFn" secondAttribute="bottom" multiplier="900/812" id="L0J-xQ-CCz"/>
+                            <constraint firstItem="MB4-WA-wvB" firstAttribute="top" secondItem="En5-hu-xFn" secondAttribute="bottom" multiplier="950/812" id="L0J-xQ-CCz"/>
                             <constraint firstItem="En5-hu-xFn" firstAttribute="top" secondItem="Mqf-m6-DGd" secondAttribute="top" id="O0Y-vP-Vo7"/>
                             <constraint firstItem="MB4-WA-wvB" firstAttribute="bottom" secondItem="Mqf-m6-DGd" secondAttribute="bottom" id="j1x-Bt-2ea"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="returnRequestsTableView" destination="MB4-WA-wvB" id="gBX-98-cJt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3O3-wl-PzO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
