@@ -21,6 +21,10 @@
 		407BEF342C4C2AF600F99D50 /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407BEF322C4C2AF600F99D50 /* ItemTableViewCell.swift */; };
 		407BEF352C4C2AF600F99D50 /* ItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 407BEF332C4C2AF600F99D50 /* ItemTableViewCell.xib */; };
 		407BEF382C4C2D6F00F99D50 /* ItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407BEF372C4C2D6F00F99D50 /* ItemsViewController.swift */; };
+		40B604B52C4C3D7400592115 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B604B42C4C3D7400592115 /* LoginViewModel.swift */; };
+		40B604B72C4C3D8400592115 /* LoginViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B604B62C4C3D8400592115 /* LoginViewModelProtocol.swift */; };
+		40B604B92C4C3F4F00592115 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B604B82C4C3F4F00592115 /* Login.swift */; };
+		40B604BC2C4C408100592115 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B604BB2C4C408100592115 /* Utils.swift */; };
 		98BF367F43C60CC2A5CBE2E3 /* Pods_Pharmacy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6CE342F6357D2EC29BB93F7 /* Pods_Pharmacy.framework */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +45,10 @@
 		407BEF322C4C2AF600F99D50 /* ItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
 		407BEF332C4C2AF600F99D50 /* ItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemTableViewCell.xib; sourceTree = "<group>"; };
 		407BEF372C4C2D6F00F99D50 /* ItemsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsViewController.swift; sourceTree = "<group>"; };
+		40B604B42C4C3D7400592115 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		40B604B62C4C3D8400592115 /* LoginViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelProtocol.swift; sourceTree = "<group>"; };
+		40B604B82C4C3F4F00592115 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
+		40B604BB2C4C408100592115 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		45DD511739DB0767A8F599C3 /* Pods-Pharmacy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pharmacy.debug.xcconfig"; path = "Target Support Files/Pods-Pharmacy/Pods-Pharmacy.debug.xcconfig"; sourceTree = "<group>"; };
 		A6CE342F6357D2EC29BB93F7 /* Pods_Pharmacy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pharmacy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C08910FC3A475E5AB2A10937 /* Pods-Pharmacy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pharmacy.release.xcconfig"; path = "Target Support Files/Pods-Pharmacy/Pods-Pharmacy.release.xcconfig"; sourceTree = "<group>"; };
@@ -79,6 +87,7 @@
 		407BEF072C4C01E500F99D50 /* Pharmacy */ = {
 			isa = PBXGroup;
 			children = (
+				40B604BA2C4C407600592115 /* Utils */,
 				407BEF1E2C4C03C900F99D50 /* View */,
 				407BEF1C2C4C03AE00F99D50 /* Modules */,
 				407BEF1F2C4C03D100F99D50 /* Model */,
@@ -122,6 +131,7 @@
 		407BEF1F2C4C03D100F99D50 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				40B604B82C4C3F4F00592115 /* Login.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -158,6 +168,8 @@
 		407BEF272C4C0B5000F99D50 /* viewModel */ = {
 			isa = PBXGroup;
 			children = (
+				40B604B42C4C3D7400592115 /* LoginViewModel.swift */,
+				40B604B62C4C3D8400592115 /* LoginViewModelProtocol.swift */,
 			);
 			path = viewModel;
 			sourceTree = "<group>";
@@ -184,6 +196,14 @@
 				407BEF372C4C2D6F00F99D50 /* ItemsViewController.swift */,
 			);
 			path = Items;
+			sourceTree = "<group>";
+		};
+		40B604BA2C4C407600592115 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				40B604BB2C4C408100592115 /* Utils.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		47A9DDA511C120A8262772E8 /* Pods */ = {
@@ -323,11 +343,15 @@
 				407BEF092C4C01E500F99D50 /* AppDelegate.swift in Sources */,
 				407BEF232C4C040300F99D50 /* NetworkManager.swift in Sources */,
 				407BEF212C4C03F800F99D50 /* NetworkManagerProtocol.swift in Sources */,
+				40B604B92C4C3F4F00592115 /* Login.swift in Sources */,
+				40B604B72C4C3D8400592115 /* LoginViewModelProtocol.swift in Sources */,
+				40B604BC2C4C408100592115 /* Utils.swift in Sources */,
 				407BEF2A2C4C0B7100F99D50 /* LoginViewController.swift in Sources */,
 				407BEF382C4C2D6F00F99D50 /* ItemsViewController.swift in Sources */,
 				407BEF342C4C2AF600F99D50 /* ItemTableViewCell.swift in Sources */,
 				407BEF2D2C4C119400F99D50 /* ReturnRequestTableViewCell.swift in Sources */,
 				407BEF312C4C178F00F99D50 /* ReturnRequestViewController.swift in Sources */,
+				40B604B52C4C3D7400592115 /* LoginViewModel.swift in Sources */,
 				407BEF0B2C4C01E500F99D50 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
