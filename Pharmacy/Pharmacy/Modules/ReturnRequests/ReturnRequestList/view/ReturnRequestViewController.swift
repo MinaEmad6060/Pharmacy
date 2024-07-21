@@ -9,6 +9,10 @@ import UIKit
 
 class ReturnRequestViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+    
+    @IBAction func btnLogout(_ sender: Any) {
+        Utils.showAlert(view: self)
+    }
     @IBOutlet weak var returnRequestsTableView: UITableView!
     
     var returnRequestList: [ReturnRequestViewData]?
@@ -45,7 +49,6 @@ class ReturnRequestViewController: UIViewController, UITableViewDelegate, UITabl
             }
         }
     }
-    
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

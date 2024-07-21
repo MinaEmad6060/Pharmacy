@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 import Alamofire
+import DropDown
 
 
 class Utils{
@@ -40,4 +41,24 @@ class Utils{
         productInfoVC.modalPresentationStyle = .fullScreen
         view.present(productInfoVC, animated: true, completion: nil)
     }
+    
+    static func showAlert(view: UIViewController) {
+        let alertController = UIAlertController(title: "Logout", message: "Are you sure you want to logout?", preferredStyle: .alert)
+        
+        let firstAction = UIAlertAction(title: "OK", style: .default) { (action) in
+            
+            view.dismiss(animated: true)
+            Utils.navigateToNextScreen(view: view, storyboard: "Main", nextScreen: "loginVC")
+        }
+        
+        let secondAction = UIAlertAction(title: "Cancel", style: .cancel) { (action) in }
+        
+        alertController.addAction(firstAction)
+        alertController.addAction(secondAction)
+        
+        view.present(alertController, animated: true, completion: nil)
+    }
+    
+    
+    
 }

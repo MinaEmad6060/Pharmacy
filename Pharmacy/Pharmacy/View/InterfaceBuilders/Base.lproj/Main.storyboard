@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="SMC-VE-oD9">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="C1Y-Ih-Isq">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
@@ -12,7 +12,7 @@
         <!--Login View Controller-->
         <scene sceneID="bC6-O1-bwT">
             <objects>
-                <viewController storyboardIdentifier="CreateNameVC" id="SMC-VE-oD9" customClass="LoginViewController" customModule="Pharmacy" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="loginVC" id="SMC-VE-oD9" customClass="LoginViewController" customModule="Pharmacy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rKa-eg-pQv">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -149,6 +149,12 @@
                                 </textAttributes>
                                 <items>
                                     <navigationItem title="Return Requests" id="XvE-VK-kf1">
+                                        <barButtonItem key="leftBarButtonItem" image="arrowshape.turn.up.backward.fill" catalog="system" id="6nO-d6-1Jf">
+                                            <color key="tintColor" red="0.14117647059999999" green="0.37254901959999998" blue="0.47843137250000001" alpha="1" colorSpace="calibratedRGB"/>
+                                            <connections>
+                                                <action selector="btnLogout:" destination="C1Y-Ih-Isq" id="gvZ-QL-Wo2"/>
+                                            </connections>
+                                        </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="Create" id="34k-Ye-RAp">
                                             <color key="tintColor" red="0.14117647059999999" green="0.37254901959999998" blue="0.47843137250000001" alpha="1" colorSpace="calibratedRGB"/>
                                             <connections>
@@ -193,10 +199,10 @@
             </objects>
             <point key="canvasLocation" x="5965.6488549618316" y="107.74647887323944"/>
         </scene>
-        <!--View Controller-->
+        <!--Create Return Request View Controller-->
         <scene sceneID="l7r-Cy-PGC">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="KDR-Pj-keA" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="KDR-Pj-keA" customClass="CreateReturnRequestViewController" customModule="Pharmacy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ALr-dy-8vo">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -211,30 +217,33 @@
                                     <navigationItem title="Create Request" id="Xa3-hc-cD0">
                                         <barButtonItem key="leftBarButtonItem" image="arrowshape.turn.up.backward.fill" catalog="system" id="h3T-lf-t8C">
                                             <color key="tintColor" red="0.14117647059999999" green="0.37254901959999998" blue="0.47843137250000001" alpha="1" colorSpace="calibratedRGB"/>
+                                            <connections>
+                                                <action selector="btnBack:" destination="KDR-Pj-keA" id="HXq-4X-ikw"/>
+                                            </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Request" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q6U-R1-uKq">
-                                <rect key="frame" x="16" y="62.333333333333336" width="361" height="31.333333333333336"/>
+                                <rect key="frame" x="20" y="62.333333333333336" width="353" height="31.333333333333336"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
                                 <color key="textColor" red="0.14117647059999999" green="0.37254901959999998" blue="0.47843137250000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Service Type :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4sS-rV-nHp">
-                                <rect key="frame" x="16" y="121" width="169" height="79"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
+                                <rect key="frame" x="20" y="121" width="149.66666666666666" height="79"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
                                 <color key="textColor" red="0.14117647059999999" green="0.37254901959999998" blue="0.47843137250000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wholesaler :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="thN-Jz-1DU">
-                                <rect key="frame" x="16" y="258.33333333333331" width="169" height="31.666666666666686"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
+                                <rect key="frame" x="20" y="258.33333333333331" width="149.66666666666666" height="32.666666666666686"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
                                 <color key="textColor" red="0.14117647059999999" green="0.37254901959999998" blue="0.47843137250000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PAz-gd-BTV">
-                                <rect key="frame" x="231" y="257" width="134" height="34.666666666666686"/>
+                                <rect key="frame" x="239" y="257" width="126" height="35.333333333333314"/>
                                 <color key="backgroundColor" red="0.12941176469999999" green="0.31372549020000001" blue="0.36470588240000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
@@ -242,6 +251,9 @@
                                     <imageReference key="image" image="arrowtriangle.down.fill" catalog="system" symbolScale="small"/>
                                     <fontDescription key="titleFontDescription" type="system" pointSize="15"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="btnWholesaler:" destination="KDR-Pj-keA" eventType="touchUpInside" id="gHL-AC-bXl"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0QP-0x-MLP">
                                 <rect key="frame" x="231" y="143.33333333333334" width="134" height="34.333333333333343"/>
@@ -252,9 +264,12 @@
                                     <imageReference key="image" image="arrowtriangle.down.fill" catalog="system" symbolScale="small"/>
                                     <fontDescription key="titleFontDescription" type="system" pointSize="15"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="btnService:" destination="KDR-Pj-keA" eventType="touchUpInside" id="yDq-Ud-Dz4"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d3Y-Qy-4iD">
-                                <rect key="frame" x="16" y="358" width="361" height="56"/>
+                                <rect key="frame" x="20" y="359" width="353" height="56"/>
                                 <color key="backgroundColor" red="0.92941176469999998" green="0.4941176471" blue="0.32156862749999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="56" id="kMw-f3-Bcn"/>
@@ -264,6 +279,9 @@
                                 <buttonConfiguration key="configuration" style="plain" title="Submit">
                                     <fontDescription key="titleFontDescription" type="system" pointSize="15"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="btnSubmit:" destination="KDR-Pj-keA" eventType="touchUpInside" id="bUn-qn-qYu"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="iot-1M-Oov"/>
@@ -274,6 +292,7 @@
                             <constraint firstItem="d3Y-Qy-4iD" firstAttribute="centerX" secondItem="ALr-dy-8vo" secondAttribute="centerX" id="7S6-eN-LEK"/>
                             <constraint firstItem="thN-Jz-1DU" firstAttribute="trailing" secondItem="4sS-rV-nHp" secondAttribute="trailing" id="9z8-hU-oQy"/>
                             <constraint firstItem="d3Y-Qy-4iD" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Q6U-R1-uKq" secondAttribute="trailing" id="B8l-qd-i7R"/>
+                            <constraint firstItem="PAz-gd-BTV" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="thN-Jz-1DU" secondAttribute="trailing" constant="8" symbolic="YES" id="BjN-dx-Bwk"/>
                             <constraint firstItem="d3Y-Qy-4iD" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Q6U-R1-uKq" secondAttribute="leading" id="Bqb-24-fnK"/>
                             <constraint firstItem="iot-1M-Oov" firstAttribute="trailing" secondItem="0QP-0x-MLP" secondAttribute="trailing" constant="28" id="MgW-h5-Rtw"/>
                             <constraint firstItem="0QP-0x-MLP" firstAttribute="top" secondItem="Q6U-R1-uKq" secondAttribute="bottom" constant="49.666666666666657" id="N8A-G4-tEG"/>
@@ -281,8 +300,7 @@
                             <constraint firstItem="4sS-rV-nHp" firstAttribute="top" secondItem="Q6U-R1-uKq" secondAttribute="bottom" multiplier="1050/812" id="Ulq-oO-Uq5"/>
                             <constraint firstItem="LcP-h8-4fU" firstAttribute="top" secondItem="iot-1M-Oov" secondAttribute="top" id="UrE-Al-6uU"/>
                             <constraint firstItem="Q6U-R1-uKq" firstAttribute="top" secondItem="LcP-h8-4fU" secondAttribute="bottom" multiplier="1150/812" id="VLw-I8-q3i"/>
-                            <constraint firstItem="Q6U-R1-uKq" firstAttribute="leading" secondItem="iot-1M-Oov" secondAttribute="leading" constant="16" id="Ztm-Wt-2xx"/>
-                            <constraint firstItem="PAz-gd-BTV" firstAttribute="leading" secondItem="0QP-0x-MLP" secondAttribute="leading" id="b6o-Xy-Etc"/>
+                            <constraint firstItem="Q6U-R1-uKq" firstAttribute="leading" secondItem="iot-1M-Oov" secondAttribute="leading" constant="20" id="Ztm-Wt-2xx"/>
                             <constraint firstItem="0QP-0x-MLP" firstAttribute="centerY" secondItem="4sS-rV-nHp" secondAttribute="centerY" id="bcV-uG-cmL"/>
                             <constraint firstItem="iot-1M-Oov" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="d3Y-Qy-4iD" secondAttribute="bottom" constant="8" id="esD-bB-irR"/>
                             <constraint firstItem="0QP-0x-MLP" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="4sS-rV-nHp" secondAttribute="trailing" constant="8" id="fLu-qb-im4"/>
@@ -290,12 +308,17 @@
                             <constraint firstItem="LcP-h8-4fU" firstAttribute="leading" secondItem="iot-1M-Oov" secondAttribute="leading" id="peV-WN-eyw"/>
                             <constraint firstItem="PAz-gd-BTV" firstAttribute="trailing" secondItem="0QP-0x-MLP" secondAttribute="trailing" id="s3b-bB-XqM"/>
                             <constraint firstItem="PAz-gd-BTV" firstAttribute="top" secondItem="0QP-0x-MLP" secondAttribute="bottom" constant="79.333333333333314" id="tRP-OA-ya4"/>
-                            <constraint firstItem="iot-1M-Oov" firstAttribute="trailing" secondItem="Q6U-R1-uKq" secondAttribute="trailing" constant="16" id="wOD-dH-u7d"/>
+                            <constraint firstItem="iot-1M-Oov" firstAttribute="trailing" secondItem="Q6U-R1-uKq" secondAttribute="trailing" constant="20" id="wOD-dH-u7d"/>
                             <constraint firstItem="PAz-gd-BTV" firstAttribute="centerY" secondItem="thN-Jz-1DU" secondAttribute="centerY" id="xpq-Ge-De7"/>
                             <constraint firstItem="LcP-h8-4fU" firstAttribute="trailing" secondItem="iot-1M-Oov" secondAttribute="trailing" id="z7n-ZK-yTA"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Koz-RI-VJf"/>
+                    <connections>
+                        <outlet property="btnServiceOutlet" destination="0QP-0x-MLP" id="2Yo-oV-iPj"/>
+                        <outlet property="btnSubmitOutlet" destination="d3Y-Qy-4iD" id="O7v-eU-Xht"/>
+                        <outlet property="btnWholesalerOutlet" destination="PAz-gd-BTV" id="LO9-vD-8Uu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b8Q-Yj-Dne" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -606,7 +629,7 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemRedColor">
-            <color red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

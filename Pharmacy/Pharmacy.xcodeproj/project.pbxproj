@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		40774B322C4CB0E000BA5D8D /* DropDownList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40774B312C4CB0E000BA5D8D /* DropDownList.swift */; };
+		40774B342C4CB9DE00BA5D8D /* Wholesaler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40774B332C4CB9DE00BA5D8D /* Wholesaler.swift */; };
 		407BEF092C4C01E500F99D50 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407BEF082C4C01E500F99D50 /* AppDelegate.swift */; };
 		407BEF0B2C4C01E500F99D50 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407BEF0A2C4C01E500F99D50 /* SceneDelegate.swift */; };
 		407BEF102C4C01E500F99D50 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 407BEF0F2C4C01E500F99D50 /* Base */; };
@@ -25,6 +27,7 @@
 		40B604B72C4C3D8400592115 /* LoginViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B604B62C4C3D8400592115 /* LoginViewModelProtocol.swift */; };
 		40B604B92C4C3F4F00592115 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B604B82C4C3F4F00592115 /* Login.swift */; };
 		40B604BC2C4C408100592115 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B604BB2C4C408100592115 /* Utils.swift */; };
+		40B70B402C4CA9C0001053BE /* CreateReturnRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B70B3F2C4CA9C0001053BE /* CreateReturnRequestViewController.swift */; };
 		40E4F1962C4C4941006E4C9C /* ReturnRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E4F1952C4C4941006E4C9C /* ReturnRequest.swift */; };
 		40E4F19A2C4C4B1A006E4C9C /* ReturnRequestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E4F1992C4C4B1A006E4C9C /* ReturnRequestViewModel.swift */; };
 		40E4F19C2C4C4B27006E4C9C /* ReturnRequestViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E4F19B2C4C4B27006E4C9C /* ReturnRequestViewModelProtocol.swift */; };
@@ -35,6 +38,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		40774B312C4CB0E000BA5D8D /* DropDownList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownList.swift; sourceTree = "<group>"; };
+		40774B332C4CB9DE00BA5D8D /* Wholesaler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wholesaler.swift; sourceTree = "<group>"; };
 		407BEF052C4C01E500F99D50 /* Pharmacy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pharmacy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		407BEF082C4C01E500F99D50 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		407BEF0A2C4C01E500F99D50 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -55,6 +60,7 @@
 		40B604B62C4C3D8400592115 /* LoginViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelProtocol.swift; sourceTree = "<group>"; };
 		40B604B82C4C3F4F00592115 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		40B604BB2C4C408100592115 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		40B70B3F2C4CA9C0001053BE /* CreateReturnRequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateReturnRequestViewController.swift; sourceTree = "<group>"; };
 		40E4F1952C4C4941006E4C9C /* ReturnRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReturnRequest.swift; sourceTree = "<group>"; };
 		40E4F1992C4C4B1A006E4C9C /* ReturnRequestViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReturnRequestViewModel.swift; sourceTree = "<group>"; };
 		40E4F19B2C4C4B27006E4C9C /* ReturnRequestViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReturnRequestViewModelProtocol.swift; sourceTree = "<group>"; };
@@ -146,6 +152,7 @@
 				40B604B82C4C3F4F00592115 /* Login.swift */,
 				40E4F1952C4C4941006E4C9C /* ReturnRequest.swift */,
 				40E4F19D2C4C5B94006E4C9C /* Item.swift */,
+				40774B332C4CB9DE00BA5D8D /* Wholesaler.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -200,7 +207,6 @@
 			isa = PBXGroup;
 			children = (
 				40B70B3B2C4CA904001053BE /* ReturnRequestList */,
-				40B70B3C2C4CA91B001053BE /* CreateReturnRequest */,
 			);
 			path = ReturnRequests;
 			sourceTree = "<group>";
@@ -218,6 +224,7 @@
 			isa = PBXGroup;
 			children = (
 				40B604BB2C4C408100592115 /* Utils.swift */,
+				40774B312C4CB0E000BA5D8D /* DropDownList.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -231,17 +238,11 @@
 			path = ReturnRequestList;
 			sourceTree = "<group>";
 		};
-		40B70B3C2C4CA91B001053BE /* CreateReturnRequest */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = CreateReturnRequest;
-			sourceTree = "<group>";
-		};
 		40E4F1972C4C4AF9006E4C9C /* view */ = {
 			isa = PBXGroup;
 			children = (
 				407BEF302C4C178F00F99D50 /* ReturnRequestViewController.swift */,
+				40B70B3F2C4CA9C0001053BE /* CreateReturnRequestViewController.swift */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -408,6 +409,7 @@
 			files = (
 				40E4F19A2C4C4B1A006E4C9C /* ReturnRequestViewModel.swift in Sources */,
 				407BEF092C4C01E500F99D50 /* AppDelegate.swift in Sources */,
+				40B70B402C4CA9C0001053BE /* CreateReturnRequestViewController.swift in Sources */,
 				40E4F19E2C4C5B94006E4C9C /* Item.swift in Sources */,
 				407BEF232C4C040300F99D50 /* NetworkManager.swift in Sources */,
 				407BEF212C4C03F800F99D50 /* NetworkManagerProtocol.swift in Sources */,
@@ -418,10 +420,12 @@
 				407BEF2A2C4C0B7100F99D50 /* LoginViewController.swift in Sources */,
 				40E4F1962C4C4941006E4C9C /* ReturnRequest.swift in Sources */,
 				407BEF382C4C2D6F00F99D50 /* ItemsViewController.swift in Sources */,
+				40774B342C4CB9DE00BA5D8D /* Wholesaler.swift in Sources */,
 				407BEF342C4C2AF600F99D50 /* ItemTableViewCell.swift in Sources */,
 				407BEF2D2C4C119400F99D50 /* ReturnRequestTableViewCell.swift in Sources */,
 				40E4F1A42C4C5D4B006E4C9C /* ItemsViewModelProtocol.swift in Sources */,
 				407BEF312C4C178F00F99D50 /* ReturnRequestViewController.swift in Sources */,
+				40774B322C4CB0E000BA5D8D /* DropDownList.swift in Sources */,
 				40B604B52C4C3D7400592115 /* LoginViewModel.swift in Sources */,
 				407BEF0B2C4C01E500F99D50 /* SceneDelegate.swift in Sources */,
 				40E4F1A22C4C5D41006E4C9C /* ItemsViewModel.swift in Sources */,

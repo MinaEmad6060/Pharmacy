@@ -30,3 +30,9 @@ struct UserReturnRequest: Codable{
 struct Pharmacy: Codable{
     var doingBusinessAs: String?
 }
+
+
+struct CreateReturnRequestResponse:Codable{
+    var id: Int?
+    var createdAt: String?
+}
