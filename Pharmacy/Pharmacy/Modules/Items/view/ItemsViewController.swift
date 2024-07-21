@@ -14,13 +14,12 @@ class ItemsViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     var itemViewModel: ItemsViewModelProtocol?
     var itemList: [ItemViewData]?
-
+    var deleteItem: (()->())?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         initViewController()
         initViewModel()
-        
     }
     
     private func initViewController(){
@@ -29,6 +28,9 @@ class ItemsViewController: UIViewController, UITableViewDelegate, UITableViewDat
         itemsTableView.dataSource = self
         Utils.registerNewTableViewCell(tableView: itemsTableView, cellClass: "ItemTableViewCell", cellName: "itemCell")
         itemsTableView.separatorStyle = .none
+        deleteItem = {
+            
+        }
     }
     
     private func initViewModel(){
@@ -38,6 +40,12 @@ class ItemsViewController: UIViewController, UITableViewDelegate, UITableViewDat
             self.itemList = self.itemViewModel?.itemList
             DispatchQueue.main.async {
                 self.itemsTableView.reloadData()
+            }
+        }
+        
+        itemViewModel?.bindDeleteItemToViewController = {
+            DispatchQueue.main.async {
+                self.view.makeToast("Item Deleted Successfully!", duration: 2.0, position: .bottom)
             }
         }
     }
@@ -72,6 +80,19 @@ class ItemsViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         return cell
     }
+    
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+            if editingStyle == .delete {
+                Utils.showAlert(view: self){
+                    Utils.currentItem = self.itemList?[indexPath.row].id
+                    self.itemList?.remove(at: indexPath.row)
+                    self.itemViewModel?.deleteItem(at: indexPath.row)
+                    self.itemViewModel?.deleteItemFromAPI()
+                    tableView.deleteRows(at: [indexPath], with: .automatic)
+                }
+            }
+        }
     
     
     @IBAction func btnBack(_ sender: Any) {

@@ -10,11 +10,11 @@ import Foundation
 class ItemsViewModel: ItemsViewModelProtocol{
     var bindItemsToViewController: (() -> ())?
     var bindNewItemToViewController: (() -> ())?
+    var bindDeleteItemToViewController: (() -> ())?
     
     var networkManager: NetworkManager?
     var itemList: [ItemViewData]?
     
-//    let returnRequestId = UserDefaults.standard.string(forKey: "returnRequestId")
     let returnRequestId = String(Utils.currentReturnRequest ?? 0)
     
     var ndc: String?
@@ -85,6 +85,26 @@ class ItemsViewModel: ItemsViewModelProtocol{
             
         }
     }
+    
+    func deleteItem(at index: Int) {
+       itemList?.remove(at: index)
+       bindItemsToViewController?()
+   }
+    
+    
+    func deleteItemFromAPI() {
+        print("delete")
+        let urlString = networkManager?.formatURL(request: "pharmacies/191/returnrequests/\(Utils.currentReturnRequest ?? 0)/items/\(Utils.currentItem ?? 0)") ?? ""
+        networkManager?.deleteDataFromAPI(url: urlString, headers: Utils.getHeaders, body: [:]) { (result: Result<Void, Error>) in
+            switch result {
+            case .success:
+                self.bindDeleteItemToViewController?()
+            case .failure(let error):
+                print("Error: \(error)")
+            }
+        }
+    }
+
     
     
     

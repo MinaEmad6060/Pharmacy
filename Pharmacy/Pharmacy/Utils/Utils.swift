@@ -43,13 +43,11 @@ class Utils{
         view.present(productInfoVC, animated: true, completion: nil)
     }
     
-    static func showAlert(view: UIViewController) {
+    static func showAlert(view: UIViewController, action: @escaping (()->())) {
         let alertController = UIAlertController(title: "Logout", message: "Are you sure you want to logout?", preferredStyle: .alert)
         
-        let firstAction = UIAlertAction(title: "OK", style: .default) { (action) in
-            
-            view.dismiss(animated: true)
-            Utils.navigateToNextScreen(view: view, storyboard: "Main", nextScreen: "loginVC")
+        let firstAction = UIAlertAction(title: "OK", style: .default) { (actionOK) in
+            action()
         }
         
         let secondAction = UIAlertAction(title: "Cancel", style: .cancel) { (action) in }

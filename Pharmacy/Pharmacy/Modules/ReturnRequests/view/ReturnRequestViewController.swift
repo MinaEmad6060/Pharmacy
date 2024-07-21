@@ -9,14 +9,11 @@ import UIKit
 
 class ReturnRequestViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-    
-    @IBAction func btnLogout(_ sender: Any) {
-        Utils.showAlert(view: self)
-    }
     @IBOutlet weak var returnRequestsTableView: UITableView!
     
     var returnRequestList: [ReturnRequestViewData]?
     var returnRequestViewModel: ReturnRequestViewModelProtocol?
+    var navToLoginScreen: (()->())?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +25,10 @@ class ReturnRequestViewController: UIViewController, UITableViewDelegate, UITabl
     private func initViewController(){
         returnRequestList = [ReturnRequestViewData]()
         returnRequestList = [ReturnRequestViewData]()
+        navToLoginScreen = {
+            self.dismiss(animated: true)
+            Utils.navigateToNextScreen(view: self, storyboard: "Main", nextScreen: "loginVC")
+        }
     }
     
 
@@ -77,6 +78,10 @@ class ReturnRequestViewController: UIViewController, UITableViewDelegate, UITabl
         }
         
         return cell
+    }
+    
+    @IBAction func btnLogout(_ sender: Any) {
+        Utils.showAlert(view: self, action: navToLoginScreen ?? {})
     }
 
 }

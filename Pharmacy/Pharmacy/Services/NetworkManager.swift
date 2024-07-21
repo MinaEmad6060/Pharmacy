@@ -52,12 +52,12 @@ class NetworkManager: NetworkManagerProtocol{
     }
     
     
-    func deleteDataFromAPI<T: Decodable>(url: String, headers: HTTPHeaders, body: [String: Any], handler: @escaping (Result<T?, Error>) -> Void) {
+    func deleteDataFromAPI(url: String, headers: HTTPHeaders, body: [String: Any], handler: @escaping (Result<Void, Error>) -> Void) {
         AF.request(url, method: .delete, parameters: body, encoding: JSONEncoding.default, headers: headers)
-            .responseDecodable(of: T.self) { response in
+            .response { response in
                 switch response.result {
-                case .success(let registerResponse):
-                    handler(.success(registerResponse))
+                case .success:
+                    handler(.success(()))
                 case .failure(let error):
                     handler(.failure(error))
                 }
