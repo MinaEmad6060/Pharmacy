@@ -32,7 +32,3 @@ struct Pharmacy: Codable{
 }
 
 
-struct CreateReturnRequestResponse:Codable{
-    var id: Int?
-    var createdAt: String?
-}

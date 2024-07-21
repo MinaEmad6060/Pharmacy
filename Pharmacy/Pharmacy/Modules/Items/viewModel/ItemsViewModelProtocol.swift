@@ -10,7 +10,16 @@ import Foundation
 
 protocol ItemsViewModelProtocol{
     var bindItemsToViewController : (()->())? { get set}
+    var bindNewItemToViewController : (()->())? { get set}
     var networkManager: NetworkManager? { get }
     var itemList: [ItemViewData]? { get }
+    var ndc: String? { get set}
+    var description: String? { get set}
+    var manufacturer: String? { get set}
+    var fullQuantity: Double? { get set}
+    var partialQuantity: Double? { get set}
+    var expirationDate: String? { get set}
+    var lotNumber: String? { get set}
     func getAllItems()
+    func addNewItem()
 }

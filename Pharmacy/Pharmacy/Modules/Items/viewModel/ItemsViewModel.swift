@@ -9,11 +9,20 @@ import Foundation
 
 class ItemsViewModel: ItemsViewModelProtocol{
     var bindItemsToViewController: (() -> ())?
+    var bindNewItemToViewController: (() -> ())?
     
     var networkManager: NetworkManager?
     var itemList: [ItemViewData]?
     
     let returnRequestId = UserDefaults.standard.string(forKey: "returnRequestId")
+    
+    var ndc: String?
+    var description: String?
+    var manufacturer: String?
+    var fullQuantity: Double?
+    var partialQuantity: Double?
+    var expirationDate: String?
+    var lotNumber: String?
     
     init(){
         networkManager = NetworkManager()
@@ -40,6 +49,38 @@ class ItemsViewModel: ItemsViewModelProtocol{
             } else {
                 print("Failed to fetch Data")
             }
+        }
+    }
+    
+    
+    func addNewItem() {
+        print("addNewItem : \(networkManager?.formatURL(request: "pharmacies/191/returnrequests/\(Utils.currentReturnRequest ?? 0)/items") ?? "")")
+        let body: [String: Any] = [
+            "ndc": ndc ?? "",
+            "description": description ?? "",
+            "manufacturer": manufacturer ?? "",
+            "packageSize": "200",
+            "requestType": "csc",
+            "name": "Best Item Name",
+            "strength": "strong",
+            "dosage": "alssot",
+            "fullQuantity": fullQuantity ?? "",
+            "partialQuantity": partialQuantity ?? "",
+            "expirationDate": expirationDate ?? "",
+            "status": "PENDING",
+            "lotNumber": lotNumber ?? ""
+        ]
+
+        networkManager?.postDataToAPI(url: networkManager?.formatURL(request: "pharmacies/191/returnrequests/\(Utils.currentReturnRequest ?? 0)/items") ?? "", headers: Utils.postHeaders, body: body){
+            (result: Result<CreateReturnRequestItem?, Error>) in
+            switch result {
+            case .success(let newItem):
+                print("userReturnRequest: \(newItem?.id ?? -1)")
+                self.bindNewItemToViewController?()
+            case .failure(let error):
+                print("Error: \(error)")
+            }
+            
         }
     }
     

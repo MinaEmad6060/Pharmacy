@@ -67,6 +67,7 @@ class CreateReturnRequestViewController: UIViewController {
                     self.view.makeToast("Please complete all fields", duration: 2.0, position: .bottom)
                 }else{
                     self.view.makeToast("Request Created Successfully!", duration: 2.0, position: .bottom)
+                    Utils.navigateToNextScreen(view: self, storyboard: "Main", nextScreen: "newItemVC")
                 }
             }
         }

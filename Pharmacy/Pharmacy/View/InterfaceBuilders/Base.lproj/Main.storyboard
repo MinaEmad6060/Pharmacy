@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="C1Y-Ih-Isq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="KDR-Pj-keA">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
@@ -324,10 +324,10 @@
             </objects>
             <point key="canvasLocation" x="6933.5877862595416" y="107.74647887323944"/>
         </scene>
-        <!--View Controller-->
+        <!--Create Item View Controller-->
         <scene sceneID="9IH-wy-0b7">
             <objects>
-                <viewController id="h23-XP-11i" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="newItemVC" id="h23-XP-11i" customClass="CreateItemViewController" customModule="Pharmacy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oXS-xI-EPh">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -339,9 +339,12 @@
                                     <color key="textColor" red="0.12941176469999999" green="0.31372549020000001" blue="0.36470588240000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </textAttributes>
                                 <items>
-                                    <navigationItem title="Create Item" id="sup-vF-iXg">
+                                    <navigationItem title="Add Item" id="sup-vF-iXg">
                                         <barButtonItem key="leftBarButtonItem" image="arrowshape.turn.up.backward.fill" catalog="system" id="Fna-Dc-DYA">
                                             <color key="tintColor" red="0.14117647059999999" green="0.37254901959999998" blue="0.47843137250000001" alpha="1" colorSpace="calibratedRGB"/>
+                                            <connections>
+                                                <action selector="btnBack:" destination="h23-XP-11i" id="iyb-Et-Xqy"/>
+                                            </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
@@ -365,8 +368,8 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q5B-ar-KOg">
-                                <rect key="frame" x="16" y="630" width="361" height="56"/>
-                                <color key="backgroundColor" red="0.92941176469999998" green="0.4941176471" blue="0.32156862749999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="16" y="645.66666666666663" width="361" height="56"/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="56" id="g5V-g6-bjY"/>
                                 </constraints>
@@ -375,6 +378,9 @@
                                 <buttonConfiguration key="configuration" style="plain" title="Add Item">
                                     <fontDescription key="titleFontDescription" type="system" pointSize="17"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="btnAdd:" destination="h23-XP-11i" eventType="touchUpInside" id="rnZ-fS-LSL"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Manufacturer :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9JU-fg-AON">
                                 <rect key="frame" x="16" y="321.33333333333331" width="157" height="24"/>
@@ -448,11 +454,18 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please complete all fields" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kb0-I8-GJ0">
+                                <rect key="frame" x="16" y="605.33333333333337" width="361" height="20.333333333333371"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" systemColor="systemRedColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vv8-hV-3hO"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="IBL-f2-WWc" firstAttribute="top" secondItem="vv8-hV-3hO" secondAttribute="top" id="2aH-zJ-xDw"/>
+                            <constraint firstItem="kb0-I8-GJ0" firstAttribute="leading" secondItem="q5B-ar-KOg" secondAttribute="leading" id="7df-Vy-vAc"/>
                             <constraint firstItem="IBL-f2-WWc" firstAttribute="leading" secondItem="vv8-hV-3hO" secondAttribute="leading" id="8gM-AB-nnF"/>
                             <constraint firstItem="q5B-ar-KOg" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="uhx-eq-wYJ" secondAttribute="leading" id="8sp-CC-qhK"/>
                             <constraint firstItem="IEy-yr-LwQ" firstAttribute="trailing" secondItem="Usz-uk-sau" secondAttribute="trailing" id="9co-l0-1i8"/>
@@ -464,7 +477,6 @@
                             <constraint firstItem="KnA-mc-5AV" firstAttribute="trailing" secondItem="IEy-yr-LwQ" secondAttribute="trailing" id="CjF-2M-bIV"/>
                             <constraint firstItem="iDU-WC-bU0" firstAttribute="top" secondItem="9JU-fg-AON" secondAttribute="bottom" constant="35" id="CuI-bl-eUG"/>
                             <constraint firstItem="aK0-4A-EEU" firstAttribute="trailing" secondItem="p9U-to-7wY" secondAttribute="trailing" id="DZ4-9O-ONK"/>
-                            <constraint firstItem="q5B-ar-KOg" firstAttribute="top" secondItem="KnA-mc-5AV" secondAttribute="bottom" multiplier="880/812" id="JBW-yM-ddE"/>
                             <constraint firstItem="9JU-fg-AON" firstAttribute="trailing" secondItem="aK0-4A-EEU" secondAttribute="trailing" id="Lgc-OU-Qik"/>
                             <constraint firstItem="vv8-hV-3hO" firstAttribute="trailing" secondItem="uhx-eq-wYJ" secondAttribute="trailing" constant="16" id="Oa1-0q-p4m"/>
                             <constraint firstItem="IBL-f2-WWc" firstAttribute="trailing" secondItem="vv8-hV-3hO" secondAttribute="trailing" id="Vta-46-Iud"/>
@@ -472,20 +484,34 @@
                             <constraint firstItem="aK0-4A-EEU" firstAttribute="top" secondItem="p9U-to-7wY" secondAttribute="bottom" constant="35" id="Wcb-fZ-2Oz"/>
                             <constraint firstItem="iDU-WC-bU0" firstAttribute="leading" secondItem="9JU-fg-AON" secondAttribute="leading" id="Z5s-Sr-tPN"/>
                             <constraint firstItem="p9U-to-7wY" firstAttribute="leading" secondItem="uhx-eq-wYJ" secondAttribute="leading" id="ZAx-P8-wdi"/>
+                            <constraint firstItem="q5B-ar-KOg" firstAttribute="top" secondItem="kb0-I8-GJ0" secondAttribute="bottom" constant="20" id="ask-BO-rMw"/>
                             <constraint firstItem="q5B-ar-KOg" firstAttribute="centerX" secondItem="oXS-xI-EPh" secondAttribute="centerX" id="doF-TE-jjc"/>
                             <constraint firstItem="vv8-hV-3hO" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="q5B-ar-KOg" secondAttribute="bottom" constant="8" id="e7j-bQ-O77"/>
                             <constraint firstItem="Usz-uk-sau" firstAttribute="leading" secondItem="iDU-WC-bU0" secondAttribute="leading" id="hqQ-as-TWe"/>
                             <constraint firstItem="9JU-fg-AON" firstAttribute="top" secondItem="aK0-4A-EEU" secondAttribute="bottom" constant="35" id="k4t-8K-ZgD"/>
                             <constraint firstItem="iDU-WC-bU0" firstAttribute="trailing" secondItem="9JU-fg-AON" secondAttribute="trailing" id="p7q-Va-A9f"/>
+                            <constraint firstItem="kb0-I8-GJ0" firstAttribute="top" secondItem="KnA-mc-5AV" secondAttribute="bottom" constant="24" id="qS6-jk-oU0"/>
                             <constraint firstItem="IEy-yr-LwQ" firstAttribute="leading" secondItem="Usz-uk-sau" secondAttribute="leading" id="rcA-tw-Dey"/>
                             <constraint firstItem="uhx-eq-wYJ" firstAttribute="leading" secondItem="vv8-hV-3hO" secondAttribute="leading" constant="16" id="rmo-CW-2Aw"/>
                             <constraint firstItem="KnA-mc-5AV" firstAttribute="leading" secondItem="IEy-yr-LwQ" secondAttribute="leading" id="wQt-yN-heZ"/>
                             <constraint firstItem="Usz-uk-sau" firstAttribute="top" secondItem="iDU-WC-bU0" secondAttribute="bottom" constant="35" id="wnq-Yn-mPh"/>
                             <constraint firstItem="Usz-uk-sau" firstAttribute="trailing" secondItem="iDU-WC-bU0" secondAttribute="trailing" id="wy6-gQ-7IS"/>
                             <constraint firstItem="uhx-eq-wYJ" firstAttribute="top" secondItem="IBL-f2-WWc" secondAttribute="bottom" multiplier="1050/812" id="yAl-8k-gVw"/>
+                            <constraint firstItem="kb0-I8-GJ0" firstAttribute="trailing" secondItem="q5B-ar-KOg" secondAttribute="trailing" id="yyG-lz-VFJ"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="6xl-9S-gVg"/>
+                    <connections>
+                        <outlet property="btnAddOutlet" destination="q5B-ar-KOg" id="qut-yh-vtO"/>
+                        <outlet property="descriptionTextField" destination="por-Wq-bbz" id="OPm-wR-gQw"/>
+                        <outlet property="expirationDateTextField" destination="xoa-0D-dge" id="DN3-bM-cjk"/>
+                        <outlet property="fullQuantityTextField" destination="Bfn-uP-SBb" id="Cvq-EZ-j1k"/>
+                        <outlet property="lotNumberTextField" destination="D5E-47-nct" id="Wws-gp-Qge"/>
+                        <outlet property="manufacturerTextField" destination="Map-VZ-iOe" id="FtB-P5-nHu"/>
+                        <outlet property="ndcTextField" destination="FJO-pL-fcK" id="8wh-zd-Qtd"/>
+                        <outlet property="partiealQuantityTextField" destination="Uoe-rh-4UO" id="Hxd-Jv-dEC"/>
+                        <outlet property="warningText" destination="kb0-I8-GJ0" id="h5Y-yN-Kbc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B4Z-Ts-5gV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

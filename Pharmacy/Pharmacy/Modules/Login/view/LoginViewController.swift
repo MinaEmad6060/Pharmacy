@@ -72,19 +72,19 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         }
     
     @objc func textFieldsDidChange() {
-            updateButtonColor()
-        }
+        updateButtonColor()
+    }
 
-        private func updateButtonColor() {
-            if let userName = userNameTextFieldOutlet.text, !userName.isEmpty,
-               let password = passwordTextFieldOutlet.text, !password.isEmpty {
-                warningText.isHidden = true
-                btnLoginOutlet.backgroundColor = Utils.activeBtntnColor
-            } else {
-                btnLoginOutlet.backgroundColor = Utils.disabledBtnColor
-                warningText.isHidden = false
-            }
+    private func updateButtonColor() {
+        if let userName = userNameTextFieldOutlet.text, !userName.isEmpty,
+           let password = passwordTextFieldOutlet.text, !password.isEmpty {
+            warningText.isHidden = true
+            btnLoginOutlet.backgroundColor = Utils.activeBtntnColor
+        } else {
+            btnLoginOutlet.backgroundColor = Utils.disabledBtnColor
+            warningText.isHidden = false
         }
+    }
     
 
 }

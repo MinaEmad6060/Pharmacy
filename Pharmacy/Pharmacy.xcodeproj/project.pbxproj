@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		40774B322C4CB0E000BA5D8D /* DropDownList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40774B312C4CB0E000BA5D8D /* DropDownList.swift */; };
 		40774B342C4CB9DE00BA5D8D /* Wholesaler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40774B332C4CB9DE00BA5D8D /* Wholesaler.swift */; };
+		40774B362C4CCABF00BA5D8D /* CreateItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40774B352C4CCABF00BA5D8D /* CreateItemViewController.swift */; };
 		407BEF092C4C01E500F99D50 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407BEF082C4C01E500F99D50 /* AppDelegate.swift */; };
 		407BEF0B2C4C01E500F99D50 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407BEF0A2C4C01E500F99D50 /* SceneDelegate.swift */; };
 		407BEF102C4C01E500F99D50 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 407BEF0F2C4C01E500F99D50 /* Base */; };
@@ -40,6 +41,7 @@
 /* Begin PBXFileReference section */
 		40774B312C4CB0E000BA5D8D /* DropDownList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownList.swift; sourceTree = "<group>"; };
 		40774B332C4CB9DE00BA5D8D /* Wholesaler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wholesaler.swift; sourceTree = "<group>"; };
+		40774B352C4CCABF00BA5D8D /* CreateItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateItemViewController.swift; sourceTree = "<group>"; };
 		407BEF052C4C01E500F99D50 /* Pharmacy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pharmacy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		407BEF082C4C01E500F99D50 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		407BEF0A2C4C01E500F99D50 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -206,7 +208,8 @@
 		407BEF2F2C4C176B00F99D50 /* ReturnRequests */ = {
 			isa = PBXGroup;
 			children = (
-				40B70B3B2C4CA904001053BE /* ReturnRequestList */,
+				40E4F1972C4C4AF9006E4C9C /* view */,
+				40E4F1982C4C4AFE006E4C9C /* viewModel */,
 			);
 			path = ReturnRequests;
 			sourceTree = "<group>";
@@ -227,15 +230,6 @@
 				40774B312C4CB0E000BA5D8D /* DropDownList.swift */,
 			);
 			path = Utils;
-			sourceTree = "<group>";
-		};
-		40B70B3B2C4CA904001053BE /* ReturnRequestList */ = {
-			isa = PBXGroup;
-			children = (
-				40E4F1972C4C4AF9006E4C9C /* view */,
-				40E4F1982C4C4AFE006E4C9C /* viewModel */,
-			);
-			path = ReturnRequestList;
 			sourceTree = "<group>";
 		};
 		40E4F1972C4C4AF9006E4C9C /* view */ = {
@@ -260,6 +254,7 @@
 			isa = PBXGroup;
 			children = (
 				407BEF372C4C2D6F00F99D50 /* ItemsViewController.swift */,
+				40774B352C4CCABF00BA5D8D /* CreateItemViewController.swift */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -429,6 +424,7 @@
 				40B604B52C4C3D7400592115 /* LoginViewModel.swift in Sources */,
 				407BEF0B2C4C01E500F99D50 /* SceneDelegate.swift in Sources */,
 				40E4F1A22C4C5D41006E4C9C /* ItemsViewModel.swift in Sources */,
+				40774B362C4CCABF00BA5D8D /* CreateItemViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -78,10 +78,11 @@ class ReturnRequestViewModel: ReturnRequestViewModelProtocol{
         ]
 
         networkManager?.postDataToAPI(url: networkManager?.formatURL(request: "pharmacies/191/returnrequests") ?? "", headers: Utils.postHeaders, body: body){
-            (result: Result<CreateReturnRequestResponse?, Error>) in
+            (result: Result<CreateReturnRequestItem?, Error>) in
             switch result {
             case .success(let userReturnRequest):
                 print("userReturnRequest: \(userReturnRequest?.id ?? -1)")
+                Utils.currentReturnRequest = userReturnRequest?.id
                 self.bindNewReturnRequestToViewController?()
             case .failure(let error):
                 print("Error: \(error)")

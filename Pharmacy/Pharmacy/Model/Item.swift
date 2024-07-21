@@ -17,3 +17,9 @@ struct ReturnRequestItem: Codable{
     var lotNumber: String?
 }
 
+
+
+struct CreateReturnRequestItem: Codable{
+    var id: Int?
+    var createdAt: String?
+}
