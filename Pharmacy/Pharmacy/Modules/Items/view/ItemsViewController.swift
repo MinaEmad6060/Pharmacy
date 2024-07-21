@@ -10,6 +10,7 @@ import UIKit
 class ItemsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource  {
 
     
+    @IBOutlet weak var emptyText: UILabel!
     @IBOutlet weak var itemsTableView: UITableView!
     
     var itemViewModel: ItemsViewModelProtocol?
@@ -24,6 +25,7 @@ class ItemsViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     private func initViewController(){
         itemList = [ItemViewData]()
+        emptyText.isHidden = true
         itemsTableView.delegate = self
         itemsTableView.dataSource = self
         Utils.registerNewTableViewCell(tableView: itemsTableView, cellClass: "ItemTableViewCell", cellName: "itemCell")
@@ -50,12 +52,26 @@ class ItemsViewController: UIViewController, UITableViewDelegate, UITableViewDat
         }
     }
     
+    private func initUpdatedItem(row: Int){
+        Utils.updatedItem = ItemViewData()
+        Utils.updatedItem?.ndc = itemList?[row].ndc
+        Utils.updatedItem?.manufacturer = itemList?[row].manufacturer
+        Utils.updatedItem?.fullQuantity = itemList?[row].fullQuantity
+        Utils.updatedItem?.partialQuantity = itemList?[row].partialQuantity
+        Utils.updatedItem?.expirationDate = itemList?[row].expirationDate
+        Utils.updatedItem?.lotNumber = itemList?[row].lotNumber
+    }
+    
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if itemList?.count ?? 0 > 0 {
+            itemsTableView.isHidden = false
+            emptyText.isHidden = true
             return itemList?.count ?? 0
         }else {
+            itemsTableView.isHidden = true
+            emptyText.isHidden = false
             return 0
         }
     }
@@ -73,7 +89,8 @@ class ItemsViewController: UIViewController, UITableViewDelegate, UITableViewDat
 
         cell.btnUpdateItemTapped = { [weak self] in
             guard let self = self else { return }
-            
+            print("press-btn")
+            initUpdatedItem(row: indexPath.row)
             Utils.currentItem = itemList?[indexPath.row].id
             Utils.navigateToNextScreen(view: self, storyboard: "Main", nextScreen: "updateItemVC")
         }

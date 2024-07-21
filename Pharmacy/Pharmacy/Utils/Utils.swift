@@ -21,6 +21,9 @@ class Utils{
     static var currentItem: Int?
     
     
+    static var updatedItem: ItemViewData?
+    
+    
     static var postHeaders: HTTPHeaders = [
         "Accept": "application/json",
         "Authorization": "Bearer \(UserDefaults.standard.string(forKey: "userToken") ?? "")"

@@ -9,6 +9,7 @@ import UIKit
 
 class ReturnRequestViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+    @IBOutlet weak var emptyText: UILabel!
     @IBOutlet weak var returnRequestsTableView: UITableView!
     
     var returnRequestList: [ReturnRequestViewData]?
@@ -54,8 +55,12 @@ class ReturnRequestViewController: UIViewController, UITableViewDelegate, UITabl
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if returnRequestList?.count ?? 0 > 0 {
+            returnRequestsTableView.isHidden = false
+            emptyText.isHidden = true
             return returnRequestList?.count ?? 0
         }else{
+            returnRequestsTableView.isHidden = true
+            emptyText.isHidden = false
             return 0
         }
     }

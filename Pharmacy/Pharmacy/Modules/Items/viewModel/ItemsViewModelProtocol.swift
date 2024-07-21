@@ -12,6 +12,8 @@ protocol ItemsViewModelProtocol{
     var bindItemsToViewController : (()->())? { get set}
     var bindNewItemToViewController : (()->())? { get set}
     var bindDeleteItemToViewController : (()->())? { get set}
+    var bindUpdateItemToViewController : (()->())? { get set}
+    
     var networkManager: NetworkManager? { get }
     var itemList: [ItemViewData]? { get }
     var ndc: String? { get set}
@@ -21,9 +23,11 @@ protocol ItemsViewModelProtocol{
     var partialQuantity: Double? { get set}
     var expirationDate: String? { get set}
     var lotNumber: String? { get set}
+    var updatedDescription: String? { get set}
     
     func getAllItems()
     func addNewItem()
     func deleteItem(at index: Int)
     func deleteItemFromAPI()
+    func updateItem()
 }

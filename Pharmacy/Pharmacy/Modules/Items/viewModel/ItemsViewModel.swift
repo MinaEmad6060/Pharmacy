@@ -11,6 +11,7 @@ class ItemsViewModel: ItemsViewModelProtocol{
     var bindItemsToViewController: (() -> ())?
     var bindNewItemToViewController: (() -> ())?
     var bindDeleteItemToViewController: (() -> ())?
+    var bindUpdateItemToViewController: (() -> ())?
     
     var networkManager: NetworkManager?
     var itemList: [ItemViewData]?
@@ -25,6 +26,9 @@ class ItemsViewModel: ItemsViewModelProtocol{
     var expirationDate: String?
     var lotNumber: String?
     
+    
+    var updatedDescription: String?
+
     init(){
         networkManager = NetworkManager()
         itemList = [ItemViewData]()
@@ -104,8 +108,45 @@ class ItemsViewModel: ItemsViewModelProtocol{
             }
         }
     }
-
     
+    
+    func updateItem() {
+        print("updatedItem?.ndc : \(Utils.updatedItem?.ndc ?? "none")")
+        let body: [String: Any] = [
+            "ndc": Utils.updatedItem?.ndc ?? "",
+            "description": updatedDescription ?? "",
+            "manufacturer": Utils.updatedItem?.manufacturer ?? "",
+            "packageSize": "200",
+            "requestType": "csc",
+            "name": "Best Item Name",
+            "strength": "strong",
+            "dosage": "alssot",
+            "fullQuantity": Utils.updatedItem?.fullQuantity ?? "",
+            "partialQuantity": Utils.updatedItem?.partialQuantity ?? "",
+            "expirationDate": Utils.updatedItem?.expirationDate ?? "",
+            "status": "PENDING",
+            "lotNumber": Utils.updatedItem?.lotNumber ?? ""
+        ]
+        
+        guard let networkManager = networkManager else {
+            print("Network manager is not initialized.")
+            return
+        }
+
+        let urlString = networkManager.formatURL(request: "pharmacies/191/returnrequests/\(Utils.currentReturnRequest ?? 0)/items/\(Utils.currentItem ?? 0)")
+        print("updatedItem-url : \(urlString)")
+
+        networkManager.updateDataOnAPI(url: urlString, headers: Utils.getHeaders, body: body) { (result: Result<CreateReturnRequestItem?, Error>) in
+            switch result {
+            case .success(let updatedItem):
+                print("userReturnRequest: \(updatedItem?.id ?? -1)")
+                self.bindUpdateItemToViewController?()
+            case .failure(let error):
+                print("Error: \(error)")
+            }
+        }
+    }
+
     
     
 }
