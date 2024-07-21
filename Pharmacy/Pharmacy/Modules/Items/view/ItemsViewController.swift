@@ -93,7 +93,6 @@ class ItemsViewController: UIViewController, UITableViewDelegate, UITableViewDat
 
         cell.btnUpdateItemTapped = { [weak self] in
             guard let self = self else { return }
-            print("press-btn")
             initUpdatedItem(row: indexPath.row)
             Utils.currentItem = itemList?[indexPath.row].id
             Utils.navigateToNextScreen(view: self, storyboard: "Main", nextScreen: "updateItemVC")

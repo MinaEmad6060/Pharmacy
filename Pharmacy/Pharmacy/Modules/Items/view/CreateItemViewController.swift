@@ -25,7 +25,6 @@ class CreateItemViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("CreateItemViewController : \(Utils.currentReturnRequest ?? -1)")
         btnAddOutlet.isEnabled = false
         warningText.isHidden = true
         addTargetForTextFields()

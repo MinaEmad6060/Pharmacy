@@ -18,13 +18,12 @@ class UpdateItemViewController: UIViewController, UITextFieldDelegate{
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        print("current-item : \(Utils.currentItem ?? -1)")
-        print("token : \(UserDefaults.standard.string(forKey: "userToken") ?? "")")
         warningText.isHidden = true
         btnUpdateOutlet.isEnabled = false
+        btnUpdateOutlet.layer.cornerRadius = 16
         addTargetForTextFields()
         initViewModel()
+        initTextField()
     }
 
     
@@ -36,6 +35,12 @@ class UpdateItemViewController: UIViewController, UITextFieldDelegate{
                 self.view.makeToast("Item Updated Successfully!", duration: 2.0, position: .bottom)
             }
         }
+    }
+    
+    private func initTextField(){
+        descriptionTextField.layer.cornerRadius = 16
+        descriptionTextField.layer.borderWidth = 1
+        descriptionTextField.layer.borderColor = Utils.disabledBtnColor.cgColor
     }
     
     
