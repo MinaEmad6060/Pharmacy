@@ -10,12 +10,10 @@ import Alamofire
 
 
 class LoginViewModel: LoginViewModelProtocol{
+    
     var bindLoginUserToViewController: (() -> ())?
-    
     var networkManager: NetworkManager?
-    
     var userName: String?
-    
     var password: String?
 
     

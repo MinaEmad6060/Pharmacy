@@ -11,12 +11,11 @@ class UpdateItemViewController: UIViewController, UITextFieldDelegate{
 
     @IBOutlet weak var descriptionTextField: UITextField!
     @IBOutlet weak var btnUpdateOutlet: UIButton!
-    
     @IBOutlet weak var warningText: UILabel!
     
     var itemViewModel: ItemsViewModelProtocol?
 
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -27,6 +26,7 @@ class UpdateItemViewController: UIViewController, UITextFieldDelegate{
         addTargetForTextFields()
         initViewModel()
     }
+
     
     private func initViewModel(){
         itemViewModel = ItemsViewModel()
@@ -37,8 +37,6 @@ class UpdateItemViewController: UIViewController, UITextFieldDelegate{
             }
         }
     }
-    
-    
     
     
     private func checkTextField() {
@@ -53,22 +51,27 @@ class UpdateItemViewController: UIViewController, UITextFieldDelegate{
         }
     }
     
+    
     private func addTargetForTextFields(){
         descriptionTextField.addTarget(self, action: #selector(textFieldsDidChange), for: .editingChanged)
         
     }
     
+    
     private func emptyTextFields(){
         descriptionTextField.text = ""
     }
    
+    
     @objc func textFieldsDidChange() {
         checkTextField()
     }
     
+    
     private func passValuesToViewModel(){
         itemViewModel?.updatedDescription = descriptionTextField.text
     }
+    
     
     @IBAction func btnBack(_ sender: Any) {
         dismiss(animated: true)

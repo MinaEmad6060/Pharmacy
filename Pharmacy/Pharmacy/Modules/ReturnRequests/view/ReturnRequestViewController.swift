@@ -84,9 +84,9 @@ class ReturnRequestViewController: UIViewController, UITableViewDelegate, UITabl
         
         return cell
     }
-    
+
     @IBAction func btnLogout(_ sender: Any) {
-        Utils.showAlert(view: self, action: navToLoginScreen ?? {})
+        Utils.showAlert(title: "Logout", message: "Are you sure you want to logout?",view: self, action: navToLoginScreen ?? {})
     }
 
 }

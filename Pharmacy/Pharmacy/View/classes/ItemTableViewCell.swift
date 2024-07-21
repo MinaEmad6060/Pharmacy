@@ -18,17 +18,11 @@ class ItemTableViewCell: UITableViewCell {
     @IBOutlet weak var partialQuantityText: UILabel!
     @IBOutlet weak var expirationDateText: UILabel!
     @IBOutlet weak var lotNumberText: UILabel!
- 
     @IBOutlet weak var btnUpdateItemOutlet: UIButton!
-    
-    @IBAction func btnShowItems(_ sender: Any) {
-        btnUpdateItemTapped?()
-    }
     
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -40,6 +34,11 @@ class ItemTableViewCell: UITableViewCell {
 
         btnUpdateItemOutlet.layer.cornerRadius = 16
         
+    }
+    
+    
+    @IBAction func btnShowItems(_ sender: Any) {
+        btnUpdateItemTapped?()
     }
     
 }

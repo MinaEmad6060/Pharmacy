@@ -27,7 +27,6 @@ class ReturnRequestTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -36,7 +35,6 @@ class ReturnRequestTableViewCell: UITableViewCell {
         bgView.layer.cornerRadius = 16
         bgView.layer.borderWidth = 1
         bgView.layer.borderColor = UIColor.gray.cgColor
-
         btnShowItemsOutlet.layer.cornerRadius = 16
         
     }

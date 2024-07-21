@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="C1Y-Ih-Isq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="SMC-VE-oD9">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
@@ -78,6 +78,13 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="logo"/>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HDl-wd-04c">
+                                <rect key="frame" x="302" y="485" width="75" height="58"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" red="0.14117647059999999" green="0.37254901959999998" blue="0.47843137250000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="eye" catalog="system"/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="T0Z-zD-pT0"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -125,6 +132,7 @@
                     <connections>
                         <outlet property="btnLoginOutlet" destination="z4H-cv-9nO" id="URa-ST-hS6"/>
                         <outlet property="passwordTextFieldOutlet" destination="hka-td-siY" id="FDf-k4-qFH"/>
+                        <outlet property="showPasswordButton" destination="HDl-wd-04c" id="ifg-G4-Gsv"/>
                         <outlet property="userNameTextFieldOutlet" destination="6lY-dx-8Xg" id="yfF-h2-kyi"/>
                         <outlet property="warningText" destination="rbK-bk-YK1" id="GMk-pe-HMl"/>
                     </connections>
@@ -698,6 +706,7 @@
     <resources>
         <image name="arrowshape.turn.up.backward.fill" catalog="system" width="128" height="104"/>
         <image name="arrowtriangle.down.fill" catalog="system" width="128" height="120"/>
+        <image name="eye" catalog="system" width="128" height="79"/>
         <image name="logo" width="124" height="81"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

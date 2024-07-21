@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 protocol LoginViewModelProtocol {
     var bindLoginUserToViewController : (()->())? { get set}
     var networkManager: NetworkManager? { get }

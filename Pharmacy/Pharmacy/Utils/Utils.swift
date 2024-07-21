@@ -46,8 +46,8 @@ class Utils{
         view.present(productInfoVC, animated: true, completion: nil)
     }
     
-    static func showAlert(view: UIViewController, action: @escaping (()->())) {
-        let alertController = UIAlertController(title: "Logout", message: "Are you sure you want to logout?", preferredStyle: .alert)
+    static func showAlert(title: String, message: String, view: UIViewController, action: @escaping (()->())) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
         
         let firstAction = UIAlertAction(title: "OK", style: .default) { (actionOK) in
             action()

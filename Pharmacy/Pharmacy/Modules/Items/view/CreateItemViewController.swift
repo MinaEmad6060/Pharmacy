@@ -32,9 +32,11 @@ class CreateItemViewController: UIViewController, UITextFieldDelegate {
         initViewModel()
     }
     
+    
     @objc func textFieldsDidChange() {
         checkTextField()
     }
+    
 
     private func checkTextField() {
         if let ndcTextField = ndcTextField.text, !ndcTextField.isEmpty,
@@ -53,6 +55,7 @@ class CreateItemViewController: UIViewController, UITextFieldDelegate {
             warningText.isHidden = false
         }
     }
+    
     
     private func initViewModel(){
         itemViewModel = ItemsViewModel()
@@ -97,12 +100,9 @@ class CreateItemViewController: UIViewController, UITextFieldDelegate {
     }
     
     
-       
-    
     @IBAction func btnBack(_ sender: Any) {
         dismiss(animated: true)
     }
-    
     
     
     @IBAction func btnAdd(_ sender: Any) {

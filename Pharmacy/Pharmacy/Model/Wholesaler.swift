@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 struct Wholesaler: Codable{
     var id: Int?
     var name: String?

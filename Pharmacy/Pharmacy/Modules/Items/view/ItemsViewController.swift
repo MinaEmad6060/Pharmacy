@@ -17,11 +17,13 @@ class ItemsViewController: UIViewController, UITableViewDelegate, UITableViewDat
     var itemList: [ItemViewData]?
     var deleteItem: (()->())?
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         initViewController()
         initViewModel()
     }
+    
     
     private func initViewController(){
         itemList = [ItemViewData]()
@@ -34,6 +36,7 @@ class ItemsViewController: UIViewController, UITableViewDelegate, UITableViewDat
             
         }
     }
+    
     
     private func initViewModel(){
         itemViewModel = ItemsViewModel()
@@ -52,6 +55,7 @@ class ItemsViewController: UIViewController, UITableViewDelegate, UITableViewDat
         }
     }
     
+    
     private func initUpdatedItem(row: Int){
         Utils.updatedItem = ItemViewData()
         Utils.updatedItem?.ndc = itemList?[row].ndc
@@ -61,7 +65,6 @@ class ItemsViewController: UIViewController, UITableViewDelegate, UITableViewDat
         Utils.updatedItem?.expirationDate = itemList?[row].expirationDate
         Utils.updatedItem?.lotNumber = itemList?[row].lotNumber
     }
-    
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -75,6 +78,7 @@ class ItemsViewController: UIViewController, UITableViewDelegate, UITableViewDat
             return 0
         }
     }
+    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "itemCell", for: indexPath) as! ItemTableViewCell
@@ -101,7 +105,7 @@ class ItemsViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
             if editingStyle == .delete {
-                Utils.showAlert(view: self){
+                Utils.showAlert(title: "Delete Item", message: "Are you sure you want to delete this item?", view: self){
                     Utils.currentItem = self.itemList?[indexPath.row].id
                     self.itemList?.remove(at: indexPath.row)
                     self.itemViewModel?.deleteItem(at: indexPath.row)

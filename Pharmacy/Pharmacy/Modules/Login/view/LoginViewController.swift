@@ -13,16 +13,16 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var userNameTextFieldOutlet: UITextField!
     @IBOutlet weak var passwordTextFieldOutlet: UITextField!
     @IBOutlet weak var btnLoginOutlet: UIButton!
-    
-    
+    @IBOutlet weak var showPasswordButton: UIButton!
+
     var loginViewModel: LoginViewModelProtocol?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setupShowPasswordButton()
         initViewController()
         initViewModel()
-        
     }
     
     
@@ -33,14 +33,17 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         btnLoginOutlet.layer.cornerRadius = 16
     }
     
+    
     private func initUserNameTextField(){
         userNameTextFieldOutlet.delegate = self
         userNameTextFieldOutlet.addTarget(self, action: #selector(textFieldsDidChange), for: .editingChanged)
         setBorderForView(view: userNameTextFieldOutlet)
     }
     
+    
     private func initPasswordTextField(){
         passwordTextFieldOutlet.delegate = self
+        passwordTextFieldOutlet.isSecureTextEntry = true
         passwordTextFieldOutlet.addTarget(self, action: #selector(textFieldsDidChange), for: .editingChanged)
         setBorderForView(view: passwordTextFieldOutlet)
     }
@@ -53,6 +56,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         view.layer.masksToBounds = true
     }
     
+    
     private func initViewModel(){
         loginViewModel = LoginViewModel()
         loginViewModel?.bindLoginUserToViewController = {
@@ -60,6 +64,19 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 Utils.navigateToNextScreen(view: self, storyboard: "Main", nextScreen: "returnRequestVC")
             }
         }
+    }
+    
+    func setupShowPasswordButton() {
+        showPasswordButton.setImage(UIImage(systemName: "eye.fill"), for: .normal)
+        showPasswordButton.setImage(UIImage(systemName: "eye.slash.fill"), for: .selected)
+        showPasswordButton.addTarget(self, action: #selector(togglePasswordView), for: .touchUpInside)
+        passwordTextFieldOutlet.rightView = showPasswordButton
+        passwordTextFieldOutlet.rightViewMode = .always
+    }
+    
+    @objc func togglePasswordView(_ sender: UIButton) {
+        passwordTextFieldOutlet.isSecureTextEntry.toggle()
+        sender.isSelected.toggle()
     }
     
     
@@ -71,10 +88,12 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             }
         }
     
+    
     @objc func textFieldsDidChange() {
         updateButtonColor()
     }
 
+    
     private func updateButtonColor() {
         if let userName = userNameTextFieldOutlet.text, !userName.isEmpty,
            let password = passwordTextFieldOutlet.text, !password.isEmpty {

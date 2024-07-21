@@ -12,12 +12,10 @@ class ItemsViewModel: ItemsViewModelProtocol{
     var bindNewItemToViewController: (() -> ())?
     var bindDeleteItemToViewController: (() -> ())?
     var bindUpdateItemToViewController: (() -> ())?
-    
     var networkManager: NetworkManager?
     var itemList: [ItemViewData]?
     
     let returnRequestId = String(Utils.currentReturnRequest ?? 0)
-    
     var ndc: String?
     var description: String?
     var manufacturer: String?
@@ -25,10 +23,9 @@ class ItemsViewModel: ItemsViewModelProtocol{
     var partialQuantity: Double?
     var expirationDate: String?
     var lotNumber: String?
-    
-    
     var updatedDescription: String?
 
+    
     init(){
         networkManager = NetworkManager()
         itemList = [ItemViewData]()
