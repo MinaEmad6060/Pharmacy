@@ -14,7 +14,8 @@ class ItemsViewModel: ItemsViewModelProtocol{
     var networkManager: NetworkManager?
     var itemList: [ItemViewData]?
     
-    let returnRequestId = UserDefaults.standard.string(forKey: "returnRequestId")
+//    let returnRequestId = UserDefaults.standard.string(forKey: "returnRequestId")
+    let returnRequestId = String(Utils.currentReturnRequest ?? 0)
     
     var ndc: String?
     var description: String?
@@ -31,10 +32,11 @@ class ItemsViewModel: ItemsViewModelProtocol{
     
     
     func getAllItems() {
-        networkManager?.getDataFromAPI(url: networkManager?.formatURL(request: "pharmacies/191/returnrequests/\(returnRequestId ?? "")/items") ?? "", headers: Utils.getHeaders){ (response: [ReturnRequestItem]?) in
+        networkManager?.getDataFromAPI(url: networkManager?.formatURL(request: "pharmacies/191/returnrequests/\(returnRequestId)/items") ?? "", headers: Utils.getHeaders){ (response: [ReturnRequestItem]?) in
             if let returnRequestItems = response {
                 var item = ItemViewData()
                 for i in 0..<returnRequestItems.count{
+                    item.id = returnRequestItems[i].id
                     item.ndc = returnRequestItems[i].ndc
                     item.description = returnRequestItems[i].description
                     item.manufacturer = returnRequestItems[i].manufacturer

@@ -18,6 +18,7 @@ class Utils{
     
     
     static var currentReturnRequest: Int?
+    static var currentItem: Int?
     
     
     static var postHeaders: HTTPHeaders = [

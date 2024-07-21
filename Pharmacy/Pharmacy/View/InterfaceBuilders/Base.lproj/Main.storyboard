@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="KDR-Pj-keA">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="C1Y-Ih-Isq">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
@@ -346,6 +346,12 @@
                                                 <action selector="btnBack:" destination="h23-XP-11i" id="iyb-Et-Xqy"/>
                                             </connections>
                                         </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Items" id="Yan-pj-srH">
+                                            <color key="tintColor" red="0.14117647059999999" green="0.37254901959999998" blue="0.47843137250000001" alpha="1" colorSpace="calibratedRGB"/>
+                                            <connections>
+                                                <segue destination="KFc-ja-WIf" kind="show" id="Als-wf-QtX"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -520,13 +526,13 @@
         <!--Items View Controller-->
         <scene sceneID="mup-lB-LWc">
             <objects>
-                <viewController storyboardIdentifier="allItemsVC" id="KFc-ja-WIf" customClass="ItemsViewController" customModule="Pharmacy" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="allItemsVC" modalPresentationStyle="fullScreen" id="KFc-ja-WIf" customClass="ItemsViewController" customModule="Pharmacy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kkw-To-x10">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C4E-Q3-9Db">
-                                <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="44"/>
                                 <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <textAttributes key="titleTextAttributes">
                                     <color key="textColor" red="0.12941176469999999" green="0.31372549020000001" blue="0.36470588240000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -535,12 +541,15 @@
                                     <navigationItem title="All Items" id="UzF-QS-AmN">
                                         <barButtonItem key="leftBarButtonItem" image="arrowshape.turn.up.backward.fill" catalog="system" id="SJr-cA-JWF">
                                             <color key="tintColor" red="0.14117647059999999" green="0.37254901959999998" blue="0.47843137250000001" alpha="1" colorSpace="calibratedRGB"/>
+                                            <connections>
+                                                <action selector="btnBack:" destination="KFc-ja-WIf" id="Cwi-dJ-9O0"/>
+                                            </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="c3J-Ir-Ndn">
-                                <rect key="frame" x="16" y="120.66666666666669" width="361" height="697.33333333333326"/>
+                                <rect key="frame" x="16" y="51.333333333333314" width="361" height="800.66666666666674"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="itemCell" id="qvT-1c-q4T">
@@ -566,6 +575,7 @@
                             <constraint firstItem="C4E-Q3-9Db" firstAttribute="leading" secondItem="D4c-KA-0Vv" secondAttribute="leading" id="yOp-Tl-NYt"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="P8M-NO-3zO"/>
                     <connections>
                         <outlet property="itemsTableView" destination="c3J-Ir-Ndn" id="yf5-6G-mGk"/>
                     </connections>
@@ -574,10 +584,10 @@
             </objects>
             <point key="canvasLocation" x="8824" y="108"/>
         </scene>
-        <!--View Controller-->
+        <!--Update Item View Controller-->
         <scene sceneID="ARe-db-yrV">
             <objects>
-                <viewController id="2eP-bH-Rkr" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="updateItemVC" id="2eP-bH-Rkr" customClass="UpdateItemViewController" customModule="Pharmacy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="s0i-nF-zjW">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -592,6 +602,9 @@
                                     <navigationItem title="Update Item" id="YnF-Dt-F4l">
                                         <barButtonItem key="leftBarButtonItem" image="arrowshape.turn.up.backward.fill" catalog="system" id="6Qu-gg-Zkg">
                                             <color key="tintColor" red="0.14117647059999999" green="0.37254901959999998" blue="0.47843137250000001" alpha="1" colorSpace="calibratedRGB"/>
+                                            <connections>
+                                                <action selector="btnBack:" destination="2eP-bH-Rkr" id="afp-jj-ydE"/>
+                                            </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
@@ -618,9 +631,12 @@
                                 </constraints>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Add Item">
+                                <buttonConfiguration key="configuration" style="plain" title="Update Item">
                                     <fontDescription key="titleFontDescription" type="system" pointSize="17"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="btnUpdate:" destination="2eP-bH-Rkr" eventType="touchUpInside" id="4AS-6t-wIK"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="cjm-l5-Xr7"/>
@@ -641,6 +657,10 @@
                             <constraint firstItem="L3b-hR-uQc" firstAttribute="leading" secondItem="2kW-S8-z1E" secondAttribute="leading" id="h2C-1f-Doo"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="btnUpdateOutlet" destination="56L-hi-Cmx" id="thW-hk-pnz"/>
+                        <outlet property="descriptionTextField" destination="L3b-hR-uQc" id="WmE-7W-Y5g"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HVu-pY-mR4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

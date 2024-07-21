@@ -63,14 +63,25 @@ class ItemsViewController: UIViewController, UITableViewDelegate, UITableViewDat
         cell.expirationDateText.text = itemList?[indexPath.row].expirationDate
         cell.lotNumberText.text = itemList?[indexPath.row].lotNumber
 
+        cell.btnUpdateItemTapped = { [weak self] in
+            guard let self = self else { return }
+            
+            Utils.currentItem = itemList?[indexPath.row].id
+            Utils.navigateToNextScreen(view: self, storyboard: "Main", nextScreen: "updateItemVC")
+        }
+        
         return cell
     }
     
-
+    
+    @IBAction func btnBack(_ sender: Any) {
+        dismiss(animated: true)
+    }
 
 }
 
 struct ItemViewData{
+    var id: Int?
     var ndc: String?
     var description: String?
     var manufacturer: String?

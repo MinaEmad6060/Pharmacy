@@ -8,7 +8,7 @@
 import UIKit
 
 class ItemTableViewCell: UITableViewCell {
-    var btnUpdateItem: (() -> Void)?
+    var btnUpdateItemTapped: (() -> Void)?
     
     @IBOutlet weak var bgView: UIView!
     @IBOutlet weak var ndcText: UILabel!
@@ -22,7 +22,7 @@ class ItemTableViewCell: UITableViewCell {
     @IBOutlet weak var btnUpdateItemOutlet: UIButton!
     
     @IBAction func btnShowItems(_ sender: Any) {
-        btnUpdateItem?()
+        btnUpdateItemTapped?()
     }
     
     

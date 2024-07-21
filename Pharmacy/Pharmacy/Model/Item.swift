@@ -8,6 +8,7 @@
 import Foundation
 
 struct ReturnRequestItem: Codable{
+    var id: Int?
     var ndc: String?
     var description: String?
     var manufacturer: String?
