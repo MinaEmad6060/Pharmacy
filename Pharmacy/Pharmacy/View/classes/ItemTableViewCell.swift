@@ -11,7 +11,7 @@ class ItemTableViewCell: UITableViewCell {
     var btnUpdateItem: (() -> Void)?
     
     @IBOutlet weak var bgView: UIView!
-    @IBOutlet weak var ndeText: UILabel!
+    @IBOutlet weak var ndcText: UILabel!
     @IBOutlet weak var descriptionText: UILabel!
     @IBOutlet weak var manufacturerText: UILabel!
     @IBOutlet weak var fullQuantityText: UILabel!

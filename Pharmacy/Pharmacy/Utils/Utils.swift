@@ -20,7 +20,8 @@ class Utils{
     
     
     static var postHeaders: HTTPHeaders = [
-        "Accept": "application/json"
+        "Accept": "application/json",
+        "Authorization": "Bearer \(UserDefaults.standard.string(forKey: "userToken") ?? "")"
     ]
     
     static var getHeaders: HTTPHeaders = [

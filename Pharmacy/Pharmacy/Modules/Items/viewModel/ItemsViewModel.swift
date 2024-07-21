@@ -18,15 +18,21 @@ class ItemsViewModel: ItemsViewModelProtocol{
     init(){
         networkManager = NetworkManager()
         itemList = [ItemViewData]()
-        print("returnRequestId : \(UserDefaults.standard.string(forKey: "returnRequestId") ?? "")")
     }
     
     
     func getAllItems() {
-        networkManager?.getDataFromAPI(url: networkManager?.formatURL(request: "pharmacies/191/returnrequests/\(returnRequestId ?? "")/items") ?? "", headers: Utils.getHeaders){ (response: Item?) in
-            if let returnRequestItems = response?.returnRequestItems {
+        networkManager?.getDataFromAPI(url: networkManager?.formatURL(request: "pharmacies/191/returnrequests/\(returnRequestId ?? "")/items") ?? "", headers: Utils.getHeaders){ (response: [ReturnRequestItem]?) in
+            if let returnRequestItems = response {
                 var item = ItemViewData()
                 for i in 0..<returnRequestItems.count{
+                    item.ndc = returnRequestItems[i].ndc
+                    item.description = returnRequestItems[i].description
+                    item.manufacturer = returnRequestItems[i].manufacturer
+                    item.fullQuantity = returnRequestItems[i].fullQuantity
+                    item.partialQuantity = returnRequestItems[i].partialQuantity
+                    item.expirationDate = returnRequestItems[i].expirationDate
+                    item.lotNumber = returnRequestItems[i].lotNumber
                     self.itemList?.append(item)
                 }
                 print("self.returnRequestList : \(self.itemList?.count ?? -1)")
@@ -36,6 +42,7 @@ class ItemsViewModel: ItemsViewModelProtocol{
             }
         }
     }
+    
     
     
 }

@@ -199,8 +199,8 @@
 		407BEF2F2C4C176B00F99D50 /* ReturnRequests */ = {
 			isa = PBXGroup;
 			children = (
-				40E4F1972C4C4AF9006E4C9C /* view */,
-				40E4F1982C4C4AFE006E4C9C /* viewModel */,
+				40B70B3B2C4CA904001053BE /* ReturnRequestList */,
+				40B70B3C2C4CA91B001053BE /* CreateReturnRequest */,
 			);
 			path = ReturnRequests;
 			sourceTree = "<group>";
@@ -220,6 +220,22 @@
 				40B604BB2C4C408100592115 /* Utils.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		40B70B3B2C4CA904001053BE /* ReturnRequestList */ = {
+			isa = PBXGroup;
+			children = (
+				40E4F1972C4C4AF9006E4C9C /* view */,
+				40E4F1982C4C4AFE006E4C9C /* viewModel */,
+			);
+			path = ReturnRequestList;
+			sourceTree = "<group>";
+		};
+		40B70B3C2C4CA91B001053BE /* CreateReturnRequest */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CreateReturnRequest;
 			sourceTree = "<group>";
 		};
 		40E4F1972C4C4AF9006E4C9C /* view */ = {

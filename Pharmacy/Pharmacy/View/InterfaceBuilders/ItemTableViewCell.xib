@@ -187,7 +187,7 @@
                 <outlet property="fullQuantityText" destination="uSh-wo-QjK" id="LGZ-JF-Vc3"/>
                 <outlet property="lotNumberText" destination="GSS-PX-4OJ" id="E0I-QC-Iy8"/>
                 <outlet property="manufacturerText" destination="KmR-ja-vgg" id="GBM-nR-myK"/>
-                <outlet property="ndeText" destination="ZbJ-qX-QYU" id="ja8-P0-PJF"/>
+                <outlet property="ndcText" destination="ZbJ-qX-QYU" id="ja8-P0-PJF"/>
                 <outlet property="partialQuantityText" destination="wGB-jz-NBu" id="5aA-hW-c85"/>
             </connections>
             <point key="canvasLocation" x="206.87022900763358" y="42.95774647887324"/>

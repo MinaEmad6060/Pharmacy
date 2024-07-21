@@ -7,11 +7,6 @@
 
 import Foundation
 
-
-struct Item: Codable{
-    var returnRequestItems: [ReturnRequestItem]?
-}
-
 struct ReturnRequestItem: Codable{
     var ndc: String?
     var description: String?
